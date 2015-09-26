@@ -1,0 +1,7 @@
+/target/
+/bower_components/
+/node_modules/
+/.settings/
+/.project
+/.classpath
+/.DS_Store/

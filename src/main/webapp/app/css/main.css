@@ -1,0 +1,492 @@
+@CHARSET "UTF-8";
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+	background-color: rgba(0, 0, 0, 0.9);
+	-webkit-background-size: 20px 25px;
+	-moz-background-size: 20px 25px;
+	background-size: 20px 25px;
+	background-image: Safari 5 and earlier -webkit-gradient( linear,
+		100% 100%, 0 0, color-stop( .25, rgba( 255, 255, 255, 0.2)),
+		color-stop( .25, rgba( 255, 255, 255, 0)), color-stop( .5, rgba( 255,
+		255, 255, 0)), color-stop( .5, rgba( 255, 255, 255, 0.2)), color-stop(
+		.75, rgba( 255, 255, 255, 0.2)), color-stop( .75, rgba( 255, 255, 255,
+		0)), color-stop( 1, rgba( 255, 255, 255, 0))), -webkit-gradient(
+		linear, 100% 0, 0 100%, color-stop( .25, rgba( 255, 255, 255, 0.2)),
+		color-stop( .25, rgba( 255, 255, 255, 0)), color-stop( .5, rgba( 255,
+		255, 255, 0)), color-stop( .5, rgba( 255, 255, 255, 0.2)), color-stop(
+		.75, rgba( 255, 255, 255, 0.2)), color-stop( .75, rgba( 255, 255, 255,
+		0)), color-stop( 1, rgba( 255, 255, 255, 0)));
+	background-image: Chrome and Webkit Nightly build
+		-webkit-linear-gradient( 135deg, rgba( 255, 255, 255, 0.2) 25%, rgba(
+		255, 255, 255, 0) 25%, rgba( 255, 255, 255, 0) 50%, rgba( 255, 255,
+		255, 0.2) 50%, rgba( 255, 255, 255, 0.2) 75%, rgba( 255, 255, 255, 0)
+		75%, rgba( 255, 255, 255, 0) 100%), -webkit-linear-gradient( 45deg,
+		rgba( 255, 255, 255, 0.2) 25%, rgba( 255, 255, 255, 0) 25%, rgba( 255,
+		255, 255, 0) 50%, rgba( 255, 255, 255, 0.2) 50%, rgba( 255, 255, 255,
+		0.2) 75%, rgba( 255, 255, 255, 0) 75%, rgba( 255, 255, 255, 0) 100%);;
+	background-image: Firefox -moz-linear-gradient( 135deg, rgba( 255,
+		255, 255, 0.2) 25%, rgba( 255, 255, 255, 0) 25%, rgba( 255, 255, 255,
+		0) 50%, rgba( 255, 255, 255, 0.2) 50%, rgba( 255, 255, 255, 0.2) 75%,
+		rgba( 255, 255, 255, 0) 75%, rgba( 255, 255, 255, 0) 100%),
+		-moz-linear-gradient( 45deg, rgba( 255, 255, 255, 0.2) 25%, rgba( 255,
+		255, 255, 0) 25%, rgba( 255, 255, 255, 0) 50%, rgba( 255, 255, 255,
+		0.2) 50%, rgba( 255, 255, 255, 0.2) 75%, rgba( 255, 255, 255, 0) 75%,
+		rgba( 255, 255, 255, 0) 100%);;
+	background-image: IE10 -ms-linear-gradient( 135deg, rgba( 255, 255
+		, 255, 0.2) 25%, rgba( 255, 255, 255, 0) 25%, rgba( 255, 255, 255, 0)
+		50%, rgba( 255, 255, 255, 0.2) 50%, rgba( 255, 255, 255, 0.2) 75%,
+		rgba( 255, 255, 255, 0) 75%, rgba( 255, 255, 255, 0) 100%),
+		-ms-linear-gradient( 45deg, rgba( 255, 255, 255, 0.2) 25%, rgba( 255,
+		255, 255, 0) 25%, rgba( 255, 255, 255, 0) 50%, rgba( 255, 255, 255,
+		0.2) 50%, rgba( 255, 255, 255, 0.2) 75%, rgba( 255, 255, 255, 0) 75%,
+		rgba( 255, 255, 255, 0) 100%);
+	background-image: opera 11+ -o-linear-gradient( 135deg, rgba( 255,
+		255, 255, 0.2) 25%, rgba( 255, 255, 255, 0) 25%, rgba( 255, 255, 255,
+		0) 50%, rgba( 255, 255, 255, 0.2) 50%, rgba( 255, 255, 255, 0.2) 75%,
+		rgba( 255, 255, 255, 0) 75%, rgba( 255, 255, 255, 0) 100%),
+		-o-linear-gradient( 45deg, rgba( 255, 255, 255, 0.2) 25%, rgba( 255,
+		255, 255, 0) 25%, rgba( 255, 255, 255, 0) 50%, rgba( 255, 255, 255,
+		0.2) 50%, rgba( 255, 255, 255, 0.2) 75%, rgba( 255, 255, 255, 0) 75%,
+		rgba( 255, 255, 255, 0) 100%);
+	background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%,
+		rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 50%,
+		rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%,
+		rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%),
+		linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%,
+		rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 50%,
+		rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%,
+		rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+		
+}
+
+/* body::after {
+  content: "";
+  background: url(../img/green_splash.png);
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  opacity: 0.25;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+} */
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  /* padding-bottom: 10px; */
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+.navbar-inverse {
+  background-color: rgba(10, 10, 9, 0.8);
+  border-color: rgb(6, 6, 6);
+}
+.navbar-inverse .navbar-nav > li > a,
+.navbar-footer .navbar-right > li > a {
+  color: #1BBC9B;
+  font-size: larger;
+}
+.navbar-nav > li > a {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 5px;
+  padding-bottom: 5px;
+}
+.navbar-inverse .navbar-nav > li > a > i.fa-sign-in {
+  /* font-size: xx-large;
+  line-height: inherit; */
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-footer .navbar-right > li > a:hover {
+  background-color: #1BBC9B;
+	/* background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		right top,
+		color-stop(0, rgb(255, 255, 255)),
+		color-stop(0.81, rgb(27, 188, 156))
+	);
+	background-image: -o-linear-gradient(right top, rgb(255, 255, 255) 0%, rgb(27, 188, 156) 81%);
+	background-image: -moz-linear-gradient(right top, rgb(255, 255, 255) 0%, rgb(27, 188, 156) 81%);
+	background-image: -webkit-linear-gradient(right top, rgb(255, 255, 255) 0%, rgb(27, 188, 156) 81%);
+	background-image: -ms-linear-gradient(right top, rgb(255, 255, 255) 0%, rgb(27, 188, 156) 81%);
+	background-image: linear-gradient(to right top, rgb(255, 255, 255) 0%, rgb(27, 188, 156) 81%); */
+  border-radius: 5px;
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  box-sizing: border-box;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar-footer .navbar-right > li > a:hover {
+	color: #fff;
+}
+
+.navbar-footer .navbar-right > li > a:focus {
+	color: #1BBC9B;
+	background-color: transparent;
+	box-shadow: none;
+  box-sizing: none;
+  border-radius: 5px;
+}
+
+
+/*  Logos css */
+
+.navbar-footer .navbar-right > li.twitter > a:hover {
+	background-color: rgb(94,169,221);
+}
+
+.navbar-footer .navbar-right > li.fb > a:hover {
+	background-color: rgb(59,89,156);
+}
+
+.navbar-footer .navbar-right > li.googleplus > a:hover {
+	background-color: rgb(196,8,7);
+}
+
+.navbar-footer .navbar-right > li.feedback > a:hover {
+	background-color: rgb(93,45,147);
+}
+
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.navbar-inverse .navbar-brand > img.brand {
+	width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+.navbar {
+  /* min-height: 75px; */
+  margin-bottom: 0px;
+}
+@media (min-width: 768px) {
+	.navbar-right {
+	  margin-right: 0px;
+	}
+}
+
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: rgba(48, 48, 48, 0.85);
+    border-right: rgba(238, 238, 238, 0);
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+	color: #1BBC9B;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus,
+.nav-sidebar > li > a:hover {
+  color: #fff;
+  background-color: #1BBC9B;
+}
+.nav-sidebar > li > a:focus {
+	color: #1BBC9B;
+	background-color: inherit;
+}
+
+.sidebar.animate {
+  -webkit-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -moz-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -ms-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -o-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+}
+.sidebar.animate.ng-enter {
+	-webkit-transform: translateX(-100px);
+  -moz-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  -o-transform: translateX(-100px);
+  transform: translateX(-100px);
+}
+.sidebar.animate.ng-enter.ng-enter-active {
+	-webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+.sidebar.animate.ng-leave {
+	-webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+.sidebar.animate.ng-leave.ng-leave-active {
+  -webkit-transform: translateX(-200px);
+  -moz-transform: translateX(-200px);
+  -ms-transform: translateX(-200px);
+  -o-transform: translateX(-200px);
+  transform: translateX(-200px);
+}
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+
+
+/*
+ * Carousel Section
+ */
+@media (min-width: 768px) {
+	.carousel-inner {
+	    height: 300px;
+	    z-index: -100;
+	}
+	
+	.carousel-control {
+		width: auto;
+		color: #1BBC9B;
+	}
+}
+
+.carousel-section {
+}
+
+.carousel-control.left,
+.carousel-control.right {
+	background-image: none;
+	opacity: 1;
+}
+
+.main-section{
+	/*background-color: #1BBC9B;*/
+	background-color: rgba(253, 253, 253, 0.94);
+  box-sizing: border-box;
+  /* border-style: outset;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-left-width: 1px; */
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.25);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.25);
+	box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.25);
+	/* opacity: 1; */
+	border-radius: 3px;
+}
+
+.sidebar-icon {
+    position: fixed;
+    background-color: rgba(48, 48, 48, 0.85);
+    width: 1%;
+    bottom: 200px;
+    left: 0;
+    font-size: 24px;
+    color: #1BBC9B;
+    /* text-align: center; */
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    filter: alpha(opacity=50);
+    opacity: 1;
+    padding-right: 5px;
+    padding-left: 5px;
+    
+    -webkit-transition: 210ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	  -moz-transition: 210ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	  -ms-transition: 210ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	  -o-transition: 210ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	  transition: 210ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+}
+.sidebar-icon:hover {
+	color: #fff;
+}
+.sidebar-icon-active {
+	-webkit-transform: translateX(200px);
+  -moz-transform: translateX(200px);
+  -ms-transform: translateX(200px);
+  -o-transform: translateX(200px);
+  transform: translateX(210px);
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+  padding-bottom: 0; 
+  margin: 0px 0 0px;
+  border-bottom: 1px solid #eee;
+}
+
+.main .page-header .form-group .search-query > input {
+	border-radius: 30px !important;
+}
+	
+.main .page-header .form-group .search-query > input::-webkit-input-placeholder  {
+    font-family:'FontAwesome';
+}
+.main .page-header .form-group .search-query > input::-moz-placeholder  {
+    font-family:'FontAwesome';
+}
+.main .page-header .form-group .search-query > input::-ms-input-placeholder {
+    font-family:'FontAwesome';
+}
+
+.feedback-icon > a {
+    position: relative;
+    bottom: 450px;
+    font-size: 24px;
+    color: #1BBC9B;
+    margin-right: -10px;
+}
+
+.feedback-icon > a:hover,
+.feedback-icon > a:focus {
+	color: #fff;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  /* margin-bottom: 30px; */
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholders > div {
+	margin: 10px;
+}
+.placeholder {
+  /* margin-bottom: 10px; */
+  border-radius: 5%;
+}
+.placeholder .img {
+  display: inline-block;
+ /*  border-radius: 50%; */
+  color: #fff;
+  /* background-color: rgba(35, 187, 232, 0.77); */
+}
+.placeholder .img .tag {
+	color: #fff;
+}
+
+.divider {
+	border-right-color: bisque;
+	border-right-style: groove;
+	border-right-width: thin;
+}
+
+
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+	width: 125px;
+	height: 75px;
+}
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.flipper, .front, .back {
+	width: 100%;
+	height: 100%;
+	border-radius: 3%;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 1s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+	color: rgba(185, 136, 16, 1);
+ 	background-color: rgba(27, 188, 188, 1);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+	color: rgba(27, 188, 188, 1);
+ 	background-color: rgba(185, 136, 16, 1);
+}
