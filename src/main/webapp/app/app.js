@@ -26,6 +26,7 @@ define(
               .when('/aboutus', { templateUrl: './app/partials/nav/aboutus.html' })
               .when('/askus', { templateUrl: './app/partials/nav/askus.html' })
               .when('/signin', { templateUrl: './app/partials/nav/signin.html' })
+              .when('/product', { templateUrl: './app/partials/product.html' })
               .otherwise({ redirectTo: '/' });
 
           //$locationProvider.html5Mode(true);
